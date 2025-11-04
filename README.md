@@ -50,7 +50,7 @@ To build a specific upstream version:
 
 ```bash
 ./run setup:checkout v1.0.7  # or any other tag
-echo "1.0.7" > VERSION        # Update package version
+echo "v1.0.7" > VERSION       # Update package version (keep 'v' prefix)
 ./run package:deb:docker
 ```
 

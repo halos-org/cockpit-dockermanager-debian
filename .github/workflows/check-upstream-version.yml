@@ -28,9 +28,6 @@ jobs:
             exit 1
           fi
 
-          # Remove 'v' prefix if present
-          LATEST_VERSION=${LATEST_VERSION#v}
-
           echo "Latest upstream version: $LATEST_VERSION"
           echo "version=$LATEST_VERSION" >> $GITHUB_OUTPUT
 
@@ -108,7 +105,7 @@ jobs:
           ### Details
 
           - **Upstream Repository:** [chrisjbawden/cockpit-dockermanager](https://github.com/chrisjbawden/cockpit-dockermanager)
-          - **Release Page:** [v$LATEST_VERSION](https://github.com/chrisjbawden/cockpit-dockermanager/releases/tag/v$LATEST_VERSION)
+          - **Release Page:** [$LATEST_VERSION](https://github.com/chrisjbawden/cockpit-dockermanager/releases/tag/$LATEST_VERSION)
 
           ### What happens after merge?
 
@@ -128,14 +125,14 @@ jobs:
           # Clone upstream at new version
           ./run setup:clone
           cd cockpit-dockermanager
-          git checkout v$LATEST_VERSION
+          git checkout $LATEST_VERSION
           cd ..
 
           # Build package
           ./run package:deb:docker
 
-          # Test installation
-          sudo dpkg -i cockpit-dockermanager_${LATEST_VERSION}-1_all.deb
+          # Test installation (note: package version strips 'v' prefix)
+          sudo dpkg -i cockpit-dockermanager_\${LATEST_VERSION#v}-1_all.deb
           \`\`\`
 
           Please verify:
