@@ -1,0 +1,39 @@
+cockpit-dockermanager (1.0.7-1) trixie; urgency=medium
+
+  * Automated release 1.0.7. See GitHub for details.
+
+ -- Hat Labs CI <matti.airas@hatlabs.fi>  Tue, 04 Nov 2025 13:25:56 +0000
+
+cockpit-dockermanager (1.0.7-1) trixie; urgency=medium
+
+  * Automated release 1.0.7. See GitHub for details.
+
+ -- Hat Labs CI <matti.airas@hatlabs.fi>  Tue, 04 Nov 2025 13:24:39 +0000
+
+cockpit-dockermanager (1.0.7-1) trixie; urgency=medium
+
+  * Automated release 1.0.7. See GitHub for details.
+
+ -- Hat Labs CI <matti.airas@hatlabs.fi>  Tue, 04 Nov 2025 13:23:10 +0000
+
+cockpit-dockermanager (1.0.7-1) trixie; urgency=medium
+
+  * Automated release 1.0.7. See GitHub for details.
+
+ -- Hat Labs CI <matti.airas@hatlabs.fi>  Tue, 04 Nov 2025 13:22:56 +0000
+
+cockpit-dockermanager (1.0.7-1) trixie; urgency=medium
+
+  * Automated release 1.0.7. See GitHub for details.
+
+ -- Hat Labs CI <matti.airas@hatlabs.fi>  Tue, 04 Nov 2025 13:22:14 +0000
+
+cockpit-dockermanager (1.0.7-1) unstable; urgency=medium
+
+  * Initial Debian packaging for Hat Labs
+  * Upstream version 1.0.7:
+    - Added modal to wrap logs, details and individual container terminal
+    - Minor UI changes
+    - Added ability to delete containers
+
+ -- Matti Airas <matti.airas@hatlabs.fi>  Mon, 04 Nov 2025 14:00:00 +0200

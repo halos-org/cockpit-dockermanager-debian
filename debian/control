@@ -1,0 +1,25 @@
+Source: cockpit-dockermanager
+Section: admin
+Priority: optional
+Maintainer: Matti Airas <matti.airas@hatlabs.fi>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Homepage: https://github.com/chrisjbawden/cockpit-dockermanager
+Vcs-Browser: https://github.com/hatlabs/cockpit-dockermanager-debian
+Vcs-Git: https://github.com/hatlabs/cockpit-dockermanager-debian.git
+Rules-Requires-Root: no
+
+Package: cockpit-dockermanager
+Architecture: all
+Depends: ${misc:Depends},
+         cockpit (>= 200)
+Recommends: docker.io | docker-ce
+Description: Cockpit plugin for Docker container management
+ Docker Manager is a lightweight and intuitive utility designed to help you
+ manage your Docker containers via a simplified web interface through Cockpit.
+ .
+ Features:
+  * List, start, stop, search and restart containers
+  * View container status, uptime, details and exposed ports
+  * In-window terminal with individual container terminal functionality
+  * Image management
