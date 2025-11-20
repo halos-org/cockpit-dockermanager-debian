@@ -1,0 +1,33 @@
+name: Pull Request Checks
+
+on:
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate debian packaging files
+        run: |
+          # Check that essential files exist
+          test -f VERSION || (echo "ERROR: VERSION file missing" && exit 1)
+          test -f debian/control || (echo "ERROR: debian/control missing" && exit 1)
+          test -f debian/rules || (echo "ERROR: debian/rules missing" && exit 1)
+
+          # Validate VERSION file format
+          VERSION=$(cat VERSION | tr -d '[:space:]')
+          if ! echo "$VERSION" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "ERROR: VERSION file must contain semantic version (e.g., 1.0.7)"
+            exit 1
+          fi
+
+          echo "✅ Validation passed"
+          echo "VERSION: $VERSION"
