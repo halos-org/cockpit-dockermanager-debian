@@ -1,0 +1,28 @@
+name: 'Build Debian Package'
+description: 'Clone upstream source and build .deb package'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Clone upstream source
+      shell: bash
+      run: ./run setup:clone
+
+    - name: Build package
+      shell: bash
+      run: ./run package:deb:docker:ci
+
+    - name: Collect built packages
+      shell: bash
+      run: |
+        # Find .deb files in current and parent directory (dpkg-buildpackage creates them in parent)
+        find . .. -maxdepth 1 -name "*.deb" -exec cp {} . \; 2>/dev/null
+
+        # Verify packages exist
+        if ! ls -1 *.deb 1>/dev/null 2>&1; then
+          echo "Error: No .deb files found"
+          exit 1
+        fi
+
+        echo "Found packages:"
+        ls -lh *.deb
