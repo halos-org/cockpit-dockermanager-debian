@@ -10,5 +10,7 @@ jobs:
     with:
       package-name: cockpit-dockermanager
       package-description: 'Docker management interface for Cockpit'
+      apt-distro: trixie
+      apt-component: main
     secrets:
       APT_REPO_PAT: ${{ secrets.APT_REPO_PAT }}
