@@ -19,12 +19,19 @@ jobs:
       - name: Query GitHub API for latest release
         id: upstream-version
         run: |
-          echo "Querying GitHub API for latest cockpit-dockermanager release..."
-          LATEST_TAG=$(curl -s "https://api.github.com/repos/chrisjbawden/cockpit-dockermanager/releases/latest" \
-            | jq -r '.tag_name // empty')
+          echo "Querying GitHub API for cockpit-dockermanager releases..."
+
+          # Fetch all releases and filter for valid semver tags only
+          # This excludes rolling tags like "latest", "latest-canary", etc.
+          # Accepts both 3-part (1.0.7) and 4-part (1.0.7.2) versions
+          LATEST_TAG=$(curl -s "https://api.github.com/repos/chrisjbawden/cockpit-dockermanager/releases" \
+            | jq -r '.[].tag_name' \
+            | grep -E '^v?[0-9]+\.[0-9]+\.[0-9]+(\.[0-9]+)?$' \
+            | sort -V \
+            | tail -n1)
 
           if [ -z "$LATEST_TAG" ]; then
-            echo "Error: Failed to fetch version from GitHub API"
+            echo "Error: Failed to fetch valid semver release from GitHub API"
             exit 1
           fi
 

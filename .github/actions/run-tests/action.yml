@@ -12,10 +12,10 @@ runs:
         test -f debian/control || (echo "ERROR: debian/control missing" && exit 1)
         test -f debian/rules || (echo "ERROR: debian/rules missing" && exit 1)
 
-        # Validate VERSION file format
+        # Validate VERSION file format (accepts 3 or 4 part versions)
         VERSION=$(cat VERSION | tr -d '[:space:]')
-        if ! echo "$VERSION" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+$'; then
-          echo "ERROR: VERSION file must contain semantic version (e.g., 1.0.7)"
+        if ! echo "$VERSION" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+(\.[0-9]+)?$'; then
+          echo "ERROR: VERSION file must contain semantic version (e.g., 1.0.7 or 1.0.7.2)"
           exit 1
         fi
 
