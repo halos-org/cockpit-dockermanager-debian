@@ -14,7 +14,7 @@ Using the provided `run` script (recommended):
 
 ```bash
 # Clone the packaging repository
-git clone https://github.com/hatlabs/cockpit-dockermanager-debian.git
+git clone https://github.com/halos-org/cockpit-dockermanager-debian.git
 cd cockpit-dockermanager-debian
 
 # Clone upstream source

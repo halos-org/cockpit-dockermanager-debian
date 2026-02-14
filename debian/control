@@ -5,8 +5,8 @@ Maintainer: Matti Airas <matti.airas@hatlabs.fi>
 Build-Depends: debhelper-compat (= 13)
 Standards-Version: 4.6.2
 Homepage: https://github.com/chrisjbawden/cockpit-dockermanager
-Vcs-Browser: https://github.com/hatlabs/cockpit-dockermanager-debian
-Vcs-Git: https://github.com/hatlabs/cockpit-dockermanager-debian.git
+Vcs-Browser: https://github.com/halos-org/cockpit-dockermanager-debian
+Vcs-Git: https://github.com/halos-org/cockpit-dockermanager-debian.git
 Rules-Requires-Root: no
 
 Package: cockpit-dockermanager
