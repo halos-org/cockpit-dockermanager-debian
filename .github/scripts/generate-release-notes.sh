@@ -87,8 +87,8 @@ This is the source code release. For Debian packages, see [apt.hatlabs.fi](https
 ### Development
 
 For development setup and build commands, see:
-- [README.md](https://github.com/hatlabs/cockpit-dockermanager-debian/blob/main/README.md) - Installation and usage
-- [CLAUDE.md](https://github.com/hatlabs/cockpit-dockermanager-debian/blob/main/CLAUDE.md) - Development guide
+- [README.md](https://github.com/halos-org/cockpit-dockermanager-debian/blob/main/README.md) - Installation and usage
+- [CLAUDE.md](https://github.com/halos-org/cockpit-dockermanager-debian/blob/main/CLAUDE.md) - Development guide
 EOF
     ;;
 
@@ -117,8 +117,8 @@ This is the source code release. For Debian packages, see [apt.hatlabs.fi](https
 ### Development
 
 For development setup and build commands, see:
-- [README.md](https://github.com/hatlabs/cockpit-dockermanager-debian/blob/main/README.md) - Installation and usage
-- [CLAUDE.md](https://github.com/hatlabs/cockpit-dockermanager-debian/blob/main/CLAUDE.md) - Development guide
+- [README.md](https://github.com/halos-org/cockpit-dockermanager-debian/blob/main/README.md) - Installation and usage
+- [CLAUDE.md](https://github.com/halos-org/cockpit-dockermanager-debian/blob/main/CLAUDE.md) - Development guide
 EOF
     ;;
 
