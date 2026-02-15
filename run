@@ -109,7 +109,7 @@ function package:deb:only {
   echo "📦 Creating Debian package..."
 
   export DEBEMAIL="matti.airas@hatlabs.fi"
-  export DEBFULLNAME="Hat Labs CI"
+  export DEBFULLNAME="Matti Airas"
   export PACKAGE_VERSION=$(release:version)
 
   # Create a new changelog entry
@@ -132,7 +132,7 @@ function package:deb:only:ci {
   echo "📦 Creating Debian package (CI mode)..."
 
   export DEBEMAIL="matti.airas@hatlabs.fi"
-  export DEBFULLNAME="Hat Labs CI"
+  export DEBFULLNAME="Matti Airas"
   export PACKAGE_VERSION=$(release:version)
 
   # CI mode: Use existing changelog entry

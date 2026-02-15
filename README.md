@@ -104,4 +104,3 @@ The upstream software is copyright © 2025 Chris Bawden and is also MIT licensed
 ## Maintainer
 
 Matti Airas <matti.airas@hatlabs.fi>
-Hat Labs
